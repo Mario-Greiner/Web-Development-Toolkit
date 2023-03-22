@@ -4,7 +4,7 @@ A collection of tools that may be helpful for developers and web designers
 
 ## Demo
 
-You find a working demo to try it out [HERE]([https://angular.io/](https://webdevtools.greiner-mario.at/))
+You find a working demo to try it out [HERE](https://webdevtools.greiner-mario.at/)
 
 ## Run on your machine
 
