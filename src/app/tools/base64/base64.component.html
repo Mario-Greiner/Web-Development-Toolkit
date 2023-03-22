@@ -1,0 +1,37 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Base64 Encode Text</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="w-100">
+            <mat-label>String to encode</mat-label>
+            <textarea matInput placeholder="Hi :)" [(ngModel)]="this.textToEncode"></textarea>
+        </mat-form-field>
+        <div *ngIf="this.showEncodedText">
+            <strong>Result:</strong><br>
+            <p>{{ this.encoded }}</p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-flat-button class="block" (click)="this.encode()">Encode</a>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Base64 Decode</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="w-100">
+            <mat-label>String to decode</mat-label>
+            <textarea matInput placeholder="SGkgOik=" [(ngModel)]="this.textToDecode"></textarea>
+        </mat-form-field>
+        <div *ngIf="this.showDecodedText">
+            <strong>Result:</strong><br>
+            <p>{{ this.decoded }}</p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-flat-button class="block" (click)="this.decode()">Decode</a>
+    </mat-card-actions>
+</mat-card>
