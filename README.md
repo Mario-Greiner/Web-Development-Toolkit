@@ -2,9 +2,27 @@
 
 A collection of tools that may be helpful for developers and web designers
 
+## Demo
+
+You find a working demo to try it out [HERE]([https://angular.io/](https://webdevtools.greiner-mario.at/))
+
+## Run on your machine
+
+To run the code on your device download the code, navigate inside the folder after you unziped it and run
+
+```
+ng serve
+```
+
+Once you see "✔ Compiled successfully." you can open your browser and open 
+
+```
+localhost:4200
+```
+
 ## Built With
 
-* [Angular(]https://angular.io/) - The web framework used
+* [Angular](https://angular.io/) - The web framework used
 * [Angular Material](https://material.angular.io/) - Style & Component Libary
 
 ## Authors
