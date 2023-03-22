@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
 import { Base64Component } from './tools/base64/base64.component';
 import { SettingsComponent } from './settings/settings.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SettingsComponent } from './settings/settings.component';
     MatButtonModule,
     MatGridListModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

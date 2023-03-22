@@ -24,6 +24,7 @@ localhost:4200
 
 * [Angular](https://angular.io/) - The web framework used
 * [Angular Material](https://material.angular.io/) - Style & Component Libary
+* [Bootstrap](https://ng-bootstrap.github.io/) - Style & Component Libary
 
 ## Authors
 

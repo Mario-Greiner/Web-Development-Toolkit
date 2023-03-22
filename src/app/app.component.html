@@ -1,13 +1,30 @@
-<mat-toolbar>
-    <h3 class="pr-25">WebDev Tools</h3>
-    <a class="mr-10" mat-flat-button routerLink="/">Home</a>
-    <a class="mr-10" mat-flat-button href="https://github.com/Mario-Greiner/WebDevTools" target="_blank">GitHub</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">WebDevTools</a>
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <span class="spacer"></span>
+      <form class="search">
+        <div class="input-group">
+            <span class="input-group-text" id="addon-wrapping">
+                <mat-icon class="search-icon">search</mat-icon>
+            </span>
+            <input type="text" class="form-control" placeholder="Search for a tool... (or type all)">
+          </div>
+      </form>
 
-    <a mat-icon-button class="cog-icon" routerLink="settings">
-        <mat-icon>settings</mat-icon>
-    </a>
-</mat-toolbar>
+      <div class="right">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Mario-Greiner" target="_blank">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 <router-outlet></router-outlet>
