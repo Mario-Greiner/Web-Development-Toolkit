@@ -1,0 +1,32 @@
+.mat-card {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.html-entities-card {
+  margin: 15px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.hover:hover {
+  cursor: copy;
+}
+
+.block {
+  display: block;
+}
+
+.star {
+  color: #f2ff00;
+  float: right;
+}
+
+@media only screen and (max-width: 740px) {
+  .hide-sm {
+    display: none !important;
+  }
+}

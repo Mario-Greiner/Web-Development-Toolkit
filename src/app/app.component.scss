@@ -14,10 +14,28 @@
     color: #fff;
   }
 
+  .black {
+    color: #000;
+  }
+
   .search {
-    min-width: 20%;
+    min-width: 50%;
   }
 
   .right {
     float: right;
+  }
+
+  .pointer:hover {
+    cursor: pointer;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  @media only screen and (max-width: 740px){
+    .hide-sm {
+      display: none!important;
+    }
   }

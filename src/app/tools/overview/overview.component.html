@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="text-center">All Apps</h2>
+    <div class="card-wrapper">
+        <mat-card class="tool-card" *ngFor="let tool of this.tools">
+
+            <mat-card-header>
+                <div mat-card-avatar class="card-header-image" [style.background-image]="'url(' + tool.icon + ')'">
+                </div>
+                <mat-card-title>{{ tool.name }} <mat-icon class="star"
+                        *ngIf="this.isFav(tool)">star</mat-icon></mat-card-title>
+                <mat-card-subtitle>{{ tool.category }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    {{ tool.description }}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-flat-button class="block" [routerLink]="'/tools/' + tool.url">Open</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.cheatsheet-card {
+  margin: 15px;
+  max-width: 400px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  place-content: stretch center;
+  align-items: stretch;
+}
+
+.card-header-image {
+  border-radius: 0;
+  background-size: cover;
+}
+
+.block {
+  display: block;
+}

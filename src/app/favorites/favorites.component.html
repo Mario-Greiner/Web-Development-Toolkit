@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="text-center">Your Favorite Apps</h2>
+    <div class="card-wrapper" *ngIf="this.favs.length > 0">
+        <mat-card class="fav-card" *ngFor="let fav of this.favs">
+
+            <mat-card-header>
+                <div mat-card-avatar class="card-header-image" [style.background-image]="'url(' + fav.icon + ')'"></div>
+                <mat-card-title>{{ fav.name }}</mat-card-title>
+                <mat-card-subtitle>{{ fav.category }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    {{ fav.description }}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-flat-button class="block" [routerLink]="'tools/' + fav.url">Open</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div class="container-fluid text-center" *ngIf="this.favs.length == 0">
+    <h2 class="mt-50">You have no favorit apps yet...</h2>
+</div>

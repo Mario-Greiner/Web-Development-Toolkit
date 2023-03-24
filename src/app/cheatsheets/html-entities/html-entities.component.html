@@ -1,0 +1,279 @@
+<mat-card class="html-entities-card">
+  <mat-card-header>
+    <mat-card-title>
+      All Entities
+      <button mat-icon-button color="primary" (click)="this.addToFav()">
+        <mat-icon class="star">{{this.isFav ? 'star':'star_border'}}</mat-icon>
+      </button>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-accordion>
+
+      <!-- ASCII Chars -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            ASCII Characters
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Only printable characters are displayed as control characters (0-31) shouldn't be present in HTML pages since
+          they have no visual representations.</p>
+
+        <table mat-table [dataSource]="ascii" class="mat-elevation-z8 w-100">
+          <!-- Position Column -->
+          <ng-container matColumnDef="character">
+            <th mat-header-cell *matHeaderCellDef> Character </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.character)">
+              {{element.character}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.name)"> {{element.name}}
+            </td>
+          </ng-container>
+
+          <!-- Number Column -->
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef> Number </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy('&\#' + element.number + ';')">
+              {{'&#' + element.number + ';'}}</td>
+          </ng-container>
+
+          <!-- Desc Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </mat-expansion-panel>
+
+      <!-- ISO 8859-1 Chars -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            ISO 8859-1 Characters
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Full list of supported ISO-8859-1 characters. Notice that the names are case sensitive, hence if you want an
+          uppercase letter, the name should also start with an uppercase letter.</p>
+
+        <table mat-table [dataSource]="iso8859" class="mat-elevation-z8 w-100">
+          <!-- Position Column -->
+          <ng-container matColumnDef="character">
+            <th mat-header-cell *matHeaderCellDef> Character </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.character)">
+              {{element.character}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.name)"> {{element.name}}
+            </td>
+          </ng-container>
+
+          <!-- Number Column -->
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef> Number </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy('&\#'+element.number+';')">{{'&#' +
+              element.number + ';'}}</td>
+          </ng-container>
+
+          <!-- Desc Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-expansion-panel>
+
+      <!-- ISO 8859-1 Symbols -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            ISO 8859-1 Symbols
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Full list of supported ISO-8859-1 symbols.</p>
+
+        <table mat-table [dataSource]="iso8859Symbols" class="mat-elevation-z8 w-100">
+          <!-- Position Column -->
+          <ng-container matColumnDef="character">
+            <th mat-header-cell *matHeaderCellDef> Character </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.character)">
+              {{element.character}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.name)"> {{element.name}}
+            </td>
+          </ng-container>
+
+          <!-- Number Column -->
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef> Number </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy('&\#'+element.number+';')">{{'&#' +
+              element.number + ';'}}</td>
+          </ng-container>
+
+          <!-- Desc Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-expansion-panel>
+
+      <!-- Math Symbols -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Math Symbols
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Full list of all supported math symbols.</p>
+
+        <table mat-table [dataSource]="math" class="mat-elevation-z8 w-100">
+          <!-- Position Column -->
+          <ng-container matColumnDef="character">
+            <th mat-header-cell *matHeaderCellDef> Character </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.character)">
+              {{element.character}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.name)"> {{element.name}}
+            </td>
+          </ng-container>
+
+          <!-- Number Column -->
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef> Number </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy('&\#'+element.number+';')">{{'&#' +
+              element.number + ';'}}</td>
+          </ng-container>
+
+          <!-- Desc Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-expansion-panel>
+
+      <!-- Greek letters -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Greek Letters
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Full list of all supported greek letters.</p>
+
+        <table mat-table [dataSource]="greek" class="mat-elevation-z8 w-100">
+          <!-- Position Column -->
+          <ng-container matColumnDef="character">
+            <th mat-header-cell *matHeaderCellDef> Character </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.character)">
+              {{element.character}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.name)"> {{element.name}}
+            </td>
+          </ng-container>
+
+          <!-- Number Column -->
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef> Number </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy('&\#'+element.number+';')">{{'&#' +
+              element.number + ';'}}</td>
+          </ng-container>
+
+          <!-- Desc Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-expansion-panel>
+
+      <!-- Miscellaneous HTML entities -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Miscellaneous entities
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>List of miscellaneous HTML entities.</p>
+
+        <table mat-table [dataSource]="misc" class="mat-elevation-z8 w-100">
+          <!-- Position Column -->
+          <ng-container matColumnDef="character">
+            <th mat-header-cell *matHeaderCellDef> Character </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.character)">
+              {{element.character}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy(element.name)"> {{element.name}}
+            </td>
+          </ng-container>
+
+          <!-- Number Column -->
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef> Number </th>
+            <td mat-cell *matCellDef="let element" class="hover" (click)="this.copy('&\#'+element.number+';')">{{'&#' +
+              element.number + ';'}}</td>
+          </ng-container>
+
+          <!-- Desc Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+  </mat-card-content>
+</mat-card>
