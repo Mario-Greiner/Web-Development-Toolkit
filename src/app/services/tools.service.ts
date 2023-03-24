@@ -15,7 +15,7 @@ export class ToolService {
     {
       name: 'Base64',
       description: 'Encode and decode strings or images with Base64',
-      category: 'Encoding/Decoding',
+      category: 'Encoding & Decoding',
       icon: 'assets/icons/base64.svg',
       url: 'base64',
     },
