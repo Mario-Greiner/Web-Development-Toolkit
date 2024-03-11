@@ -1,24 +1,31 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            base64 Encode/Decode
+            <button mat-icon-button color="primary" (click)="this.addToFav()">
+                <mat-icon>{{this.isFav ? 'star':'star_border'}}</mat-icon>
+            </button>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
 
-<div class="w-full max-w-sm p-4 border rounded-lg shadow sm:p-6 md:p-8 bg-slate-800 border-slate-700 w-100">
-        <h5 class="text-xl font-medium text-white">Sign in to our platform</h5>
-
-        <mat-form-field class="text-sm rounded-lg w-full placeholder-white text-white" appearance="fill">
-            <mat-label class="text-white">Choose an input type</mat-label>
-            <mat-select [(ngModel)]="this.type" (valueChange)="this.showOutput = false" >
+        <mat-form-field class="text-sm rounded-lg w-full placeholder-black" appearance="fill">
+            <mat-label class="">Choose an input type</mat-label>
+            <mat-select [(ngModel)]="this.type" (valueChange)="this.showOutput = false">
                 <mat-option value="txt">Text</mat-option>
                 <mat-option value="img">Image</mat-option>
             </mat-select>
         </mat-form-field>
 
         <div *ngIf="this.type == 'txt'">
-            <mat-form-field class="text-sm rounded-lg w-full placeholder-white text-white">
-                <mat-label class="text-white">Input</mat-label>
-                <textarea class="placeholder-white text-white" matInput placeholder="Hi :)" [(ngModel)]="this.input"></textarea>
+            <mat-form-field class="text-sm rounded-lg w-full placeholder-black">
+                <mat-label class="">Input</mat-label>
+                <textarea class="placeholder-black " matInput placeholder="Hi :)" [(ngModel)]="this.input"></textarea>
             </mat-form-field>
-    
-            <mat-form-field class="text-sm rounded-lg w-full placeholder-white text-white" appearance="fill">
-                <mat-label class="text-white">Choose an action</mat-label>
-                <mat-select class="text-white placeholder-white" [(ngModel)]="this.action">
+
+            <mat-form-field class="text-sm rounded-lg w-full placeholder-black" appearance="fill">
+                <mat-label class="">Choose an action</mat-label>
+                <mat-select class=" placeholder-black" [(ngModel)]="this.action">
                     <mat-option value="encode">Encode</mat-option>
                     <mat-option value="decode">Decode</mat-option>
                 </mat-select>
@@ -26,19 +33,21 @@
         </div>
 
         <div *ngIf="this.type == 'img'">
-            <input class="text-white" type="file" (change)="setImage($event)" />
+            <input class="" type="file" (change)="setImage($event)" />
         </div>
 
         <div class="mt-25" *ngIf="this.showOutput">
-            <p class="text-white"><strong>Output:</strong><span class="copy" (click)="this.copyText()">Copy</span></p>
-            <textarea class="text-white placeholder-white" matInput [(ngModel)]="this.output" rows="5"></textarea>
+            <p class=""><strong>Output:</strong><span class="copy" (click)="this.copyText()">Copy</span></p>
+            <textarea class=" placeholder-black" matInput [(ngModel)]="this.output" rows="5"></textarea>
         </div>
 
         <div *ngIf="this.type == 'img'">
-            <p class="text-white">Preview:</p>
+            <p class="">Preview:</p>
             <img [src]="this.output" alt="Preview Image" class="preview">
         </div>
 
-        <button (click)="this.handleInput()" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Run</button>
+        <button (click)="this.handleInput()"
+            class="w-full  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Run</button>
 
-</div>
+    </mat-card-content>
+</mat-card>

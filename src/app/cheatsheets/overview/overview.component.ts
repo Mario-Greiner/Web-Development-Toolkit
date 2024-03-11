@@ -13,9 +13,17 @@ export class CheatsheetsOverviewComponent {
   constructor(
     private csService: CheatsheetsService,
     private favS: FavoritesService
-  ) {}
+  ) { }
 
-  isFav(item: any) {
+  isFavorite(item: any) {
     return this.favS.isFavorite(item);
+  }
+
+  toggleFavorite(item: any) {
+    if (this.favS.isFavorite(item)) {
+      this.favS.removeFavorite(item);
+    } else {
+      this.favS.addToFavorites(item);
+    }
   }
 }

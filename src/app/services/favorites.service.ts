@@ -5,19 +5,19 @@ import { Injectable } from '@angular/core';
 })
 export class FavoritesService {
 
-  constructor() {}
+  constructor() { }
 
-  public get favorites(){
+  public get favorites() {
     return JSON.parse(localStorage.getItem('favorite-apps') + '');
   }
 
   addToFavorites(app: any) {
     let favs = this.favorites;
 
-    if(favs === null){
+    if (favs === null) {
       favs = [app];
 
-    }else{
+    } else {
       favs.push(app);
     }
 
@@ -26,7 +26,7 @@ export class FavoritesService {
     alert('Successfully added ' + app?.name + ' to favorite apps.');
   }
 
-  isFavorite(search: any) {
+  isFavorite(search: any): boolean {
     let res = false;
 
     if (this.favorites !== null) {
@@ -41,5 +41,5 @@ export class FavoritesService {
     return res;
   }
 
-  removeFavorite() {}
+  removeFavorite(item: any) { }
 }
