@@ -7,6 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
+import {
+  HighlightModule,
+  HIGHLIGHT_OPTIONS,
+  HighlightOptions,
+} from 'ngx-highlightjs';
+import { AngularDeviceInformationService } from 'angular-device-information';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {MatCommonModule} from '@angular/material/core';
@@ -30,6 +37,11 @@ import { Base64Component } from './tools/base64/base64.component';
 
 import { CheatsheetsOverviewComponent } from './cheatsheets/overview/overview.component';
 import { HtmlEntitiesComponent } from './cheatsheets/html-entities/html-entities.component';
+import { CssCursorComponent } from './cheatsheets/css-cursor/css-cursor.component';
+import { DeviceInfoComponent } from './tools/device-info/device-info.component';
+import { UtfEightSymbolsComponent } from './cheatsheets/utf-eight-symbols/utf-eight-symbols.component';
+import { TextToJsonComponent } from './tools/text-to-json/text-to-json.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -41,13 +53,19 @@ import { HtmlEntitiesComponent } from './cheatsheets/html-entities/html-entities
     ToolsOverviewComponent,
     Base64Component,
     CheatsheetsOverviewComponent,
-    HtmlEntitiesComponent
+    HtmlEntitiesComponent,
+    CssCursorComponent,
+    DeviceInfoComponent,
+    UtfEightSymbolsComponent,
+    TextToJsonComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HighlightModule,
     MatCommonModule,
     MatToolbarModule,
     MatIconModule,
@@ -61,7 +79,17 @@ import { HtmlEntitiesComponent } from './cheatsheets/html-entities/html-entities
     MatSnackBarModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: <HighlightOptions>{
+        fullLibraryLoader: () => import('highlight.js'),
+        themePath: 'assets/styles/solarized-dark.css',
+        lineNumbers: true
+      }
+    },
+    AngularDeviceInformationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

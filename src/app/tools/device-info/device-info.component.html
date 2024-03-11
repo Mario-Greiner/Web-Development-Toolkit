@@ -1,0 +1,52 @@
+
+<div class="w-full border border-slate-200 rounded-lg shadow">
+    <div class="border-t border-slate-200 border-slate-600">
+        <div class="p-4 bg-slate-800 md:p-8">
+            <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto sm:grid-cols-3 xl:grid-cols-6 text-white sm:p-8">
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">{{ this.deviceInformationService.getDeviceType() }}</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">Device</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">{{ this.deviceInformationService.getDeviceInfo().os }}</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">OS</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">{{ this.deviceInformationService.getDeviceInfo().osVersion }}</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">OS Version</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold text-center">{{ this.deviceInformationService.getDeviceInfo().screen_resolution }} px</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">Screensize</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">{{ this.getOrientation() }}</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">Orientation</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">{{ this.deviceInformationService.getDeviceInfo().cookies ? 'Enabled':'Disabled' }}</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">Cookies</dd>
+                </div>
+            </dl>
+        </div>
+        <div class="p-4 bg-slate-800 md:p-8">
+            <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto sm:grid-cols-3 xl:grid-cols-6 text-white sm:p-8">
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">{{ this.deviceInformationService.getDeviceInfo().browser }}</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">Browser</dd>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <dt class="mb-2 text-3xl font-extrabold">{{ this.deviceInformationService.getDeviceInfo().browserVersion }}</dt>
+                    <dd class="text-slate-500 dark:text-slate-400">Browser-Version</dd>
+                </div>
+                <p class="font-extrabold text-center w-full">
+                    {{ this.deviceInformationService.getDeviceInfo().userAgent }}<br>
+                    <span class="text-slate-500 dark:text-slate-400">User Agent</span>
+                </p>
+            </dl>
+            <p>
+                
+            </p>
+        </div>
+    </div>
+</div>

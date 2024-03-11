@@ -1,0 +1,62 @@
+
+<mat-card class="cursors-card">
+    <mat-card-header>
+        <mat-card-title>
+            CSS Cursors
+            <button mat-icon-button color="primary" (click)="this.addToFav()">
+                <mat-icon class="star">{{this.isFav ? 'star':'star_border'}}</mat-icon>
+            </button>
+        </mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Cursor</label>
+            <select class="form-control" (change)="this.selectionEvent($event)">
+                <option value="default">Default</option>
+                <option value="pointer">pointer</option>
+                <option value="none">none</option>
+                <option value="context-menu">context-menu</option>
+                <option value="help">help</option>
+                <option >progress</option>
+                <option >wait</option>
+                <option >cell</option>
+                <option >crosshair</option>
+                <option >text</option>
+                <option >vertical-text</option>
+                <option >alias</option>
+                <option >copy</option>
+                <option >move</option>
+                <option >no-drop</option>
+                <option >not-allowed</option>
+                <option >grab</option>
+                <option >grabbing</option>
+                <option >all-scroll</option>
+                <option >col-resize</option>
+                <option >row-resize</option>
+                <option >n-resize</option>
+                <option >e-resize</option>
+                <option >s-resize</option>
+                <option >w-resize</option>
+                <option >zoom-in</option>
+                <option >zoom-out</option>
+                <option >asdasd</option>
+                <option >asdasd</option>
+                <option >asdasd</option>
+                <option >asdasd</option>
+                <option >asdasd</option>
+                <option >asdasd</option>
+                <option >asdasd</option>
+                <option >asdasd</option>
+            </select>
+          </div>
+
+        
+
+        <div class="w-100 h-100 p-3 preview-area" [ngStyle]="{'cursor': this.cursor}">
+            <h1 class="text-center prev">Preview</h1>
+        </div>
+               
+    </mat-card-content>
+</mat-card>

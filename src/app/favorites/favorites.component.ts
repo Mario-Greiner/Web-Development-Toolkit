@@ -16,10 +16,12 @@ export interface FavoriteApp {
 })
 export class FavoritesComponent {
   constructor(private favS: FavoritesService) {
-    if (localStorage.getItem('fav') != null) {
+    if (localStorage.getItem('fav')) {
       this.favs = JSON.parse(localStorage.getItem('fav') + '');
     }
+
+    console.info(this.favs);
   }
 
-  favs: FavoriteApp[] = this.favS.getFavorites();
+  favs: FavoriteApp[] = this.favS.favorites;
 }

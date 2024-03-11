@@ -4,36 +4,36 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class FavoritesService {
-  private favs = JSON.parse(localStorage.getItem('favorite-apps') + '');
 
   constructor() {}
 
-  getFavorites() {
-    return this.favs;
+  public get favorites(){
+    return JSON.parse(localStorage.getItem('favorite-apps') + '');
   }
 
   addToFavorites(app: any) {
-    if (localStorage.getItem('favorite-apps') != null) {
-      let arr = JSON.parse(localStorage.getItem('favorite-apps') + '');
-      arr.push(app);
-    } else {
-      let favs = [app];
-      localStorage.setItem('favorite-apps', JSON.stringify(favs));
+    let favs = this.favorites;
+
+    if(favs === null){
+      favs = [app];
+
+    }else{
+      favs.push(app);
     }
 
-    alert('successfully added ' + app?.name + ' to favorite apps.');
+    localStorage.setItem('favorite-apps', JSON.stringify(favs));
+
+    alert('Successfully added ' + app?.name + ' to favorite apps.');
   }
 
-  isFavorite(itemUrl: string) {
+  isFavorite(search: any) {
     let res = false;
 
-    if (this.favs !== null) {
-      for (const fav of this.favs) {
+    if (this.favorites !== null) {
+      for (const fav of this.favorites) {
         //fav.name == item.name && fav.description == item.description && fav.category == item.category && fav.icon == item.icon && fav.url == item.url
-        if (fav.url == itemUrl) {
+        if (fav.name == search.name) {
           res = true;
-        } else {
-          res = false;
         }
       }
     }

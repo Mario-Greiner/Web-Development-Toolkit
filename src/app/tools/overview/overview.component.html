@@ -1,23 +1,31 @@
-<div class="container">
-    <h2 class="text-center">All Apps</h2>
-    <div class="card-wrapper">
-        <mat-card class="tool-card" *ngFor="let tool of this.tools">
+<h2 class="text-center">All Tools</h2>
 
-            <mat-card-header>
-                <div mat-card-avatar class="card-header-image" [style.background-image]="'url(' + tool.icon + ')'">
+<div class="grid md:gap-4 grid-cols-1 md:grid-cols-3">
+
+    <div class="rounded mb-4 grid relative content-center gap-2 lg:gap-4 h-full bg-slate-800"
+        *ngFor="let tool of this.tools">
+
+        <div class="max-w-sm w-full lg:max-w-full lg:flex">
+            <div class="h-48 lg:h-auto lg:w-48 rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+                <img class="w-2/3 mx-auto" [src]="tool.icon">
+            </div>
+            <div class="rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div class="mb-8">
+                    <p class="text-sm text-white flex items-center">
+                        {{ tool.category }}
+                    </p>
+                    <div class="text-white font-bold text-xl mb-2">{{ tool.name }}</div>
+
                 </div>
-                <mat-card-title>{{ tool.name }} <mat-icon class="star"
-                        *ngIf="this.isFav(tool)">star</mat-icon></mat-card-title>
-                <mat-card-subtitle>{{ tool.category }}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <p>
-                    {{ tool.description }}
-                </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <a mat-flat-button class="block" [routerLink]="'/tools/' + tool.url">Open</a>
-            </mat-card-actions>
-        </mat-card>
+            </div>
+
+        </div>
+
+        <p class="text-white text-base px-4 py-0 ">{{ tool.description }}</p>
+
+        <button class="bg-slate-500 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded-full mx-4"
+            [routerLink]="tool.url">
+            OPEN
+        </button>
     </div>
 </div>

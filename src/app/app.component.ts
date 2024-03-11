@@ -10,7 +10,9 @@ export class AppComponent {
   title = 'WebDevTools';
   searchTerm: string = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+  ) {}
 
   search() {
     this.router.navigate(['/search/' + this.searchTerm]);

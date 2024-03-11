@@ -16,6 +16,13 @@ export interface HtmlEntitie {
 })
 export class HtmlEntitiesComponent {
   isFav = false;
+  item = {
+    name: 'HTML Entities',
+    description: 'Encode/decode and overview for all html entities',
+    category: 'Work in progess',
+    icon: 'assets/icons/html5.svg',
+    url: '/cheatsheets/html-entities',
+  };
 
   displayedColumns: string[] = ['character', 'name', 'number', 'description'];
 
@@ -1771,7 +1778,7 @@ export class HtmlEntitiesComponent {
   ];
 
   constructor(private _snackBar: MatSnackBar, private favS: FavoritesService) {
-    this.isFav = this.favS.isFavorite('html-entities');
+    this.isFav = Boolean(this.favS.isFavorite(this.item));
   }
 
   copy(val: string) {
@@ -1791,15 +1798,7 @@ export class HtmlEntitiesComponent {
   }
 
   addToFav() {
-    let fav = {
-      name: 'HTML Entities',
-      description: 'Encode/decode and overview for all html entities',
-      category: 'Work in progess',
-      icon: 'assets/icons/html5.svg',
-      url: 'html-entities',
-    };
-
     this.isFav = true;
-    this.favS.addToFavorites(fav);
+    this.favS.addToFavorites(this.item);
   }
 }

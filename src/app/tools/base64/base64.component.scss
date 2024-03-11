@@ -2,6 +2,18 @@
   margin: 15px;
 }
 
+.copy {
+  float: right;
+}
+
+.copy:hover {
+  cursor: pointer;
+}
+
+.preview {
+  max-width: 500px;
+}
+
 .w-100 {
   width: 100%;
 }
@@ -23,4 +35,8 @@ pre {
 .star {
   color: #f2ff00;
   float: right;
+}
+
+.mt-25 {
+  margin-top: 25px;
 }
