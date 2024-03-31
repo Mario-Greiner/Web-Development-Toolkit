@@ -1,4 +1,4 @@
-# WebDevTool
+# Web Development Toolkit
 
 A collection of tools that may be helpful for developers and web designers
 
